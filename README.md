@@ -8,7 +8,7 @@ An app to download lessons to pdf from efront learning platform.
 4. Install module dependecies: `npm install`.
 
 ## Usage
-Usage: index -u username -p password -l lesson -s startUnit -e endUnit -o
+Usage: node index -u username -p password -l lesson -s startUnit -e endUnit -o
 outDirectory [url]
 
 Options:
@@ -18,6 +18,9 @@ Options:
   -s, --start-unit                                                   [required]
   -e, --end-unit                                                     [required]
   -o, --out-directory                                                [required]
+
+Lesson is the number that appears in `http://myurl/efront/www/student.php?lessons_ID=[lesson]`
+Start unit is the first unit number. End unit is the last unit number. The order is the one that appears in the lesson page. The unit number is the number that appears in `http://mypage/efront/www/student.php?view_unit=[unit]`.
 
 ## License
 Copyright (c) Martín Molina Álvarez. All rights reserved.
