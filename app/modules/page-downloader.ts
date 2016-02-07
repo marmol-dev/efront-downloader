@@ -28,7 +28,7 @@ export default class PageDownloader {
       (ph) => {
         ph.createPage((page) => {
           page.setHeaders(this.getHeaders());
-          page.setPaperSize({format: 'A4'});
+          page.setViewportSize(1024, 1000);
           page.set('onError', () => {});
           page.open(this.url, (status) => {
             if (status == 'success'){
