@@ -1,8 +1,8 @@
 {
-  "name": "classter_download",
-  "version": "1.0.0",
+  "name": "efront-downloader",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "efront-downloader.js",
   "scripts": {
     "preinstall": "./node_modules/.bin/tsd install",
     "watch": "./node_modules/.bin/webpack --watch",
@@ -12,7 +12,7 @@
     "predebug": "npm run build",
     "debug": "node --debug-brk index.js"
   },
-  "author": "",
+  "author": "tomymolina",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^0.20.0",

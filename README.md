@@ -1,8 +1,8 @@
-# efront_download
+# efront-downloader
 An app to download lessons to pdf from efront learning platform.
 
 ## Install
-1. Install nodejs. I recommend using [https://github.com/creationix/nvm](nvm).
+1. Install NodeJS. I recommend using [https://github.com/creationix/nvm](nvm).
 2. Install `pdftk`. In Debian based: `sudo apt-get install pdftk`.
 3. Install phantomjs: `npm install -g phantomjs`.
 4. Install module dependecies: `npm install`.

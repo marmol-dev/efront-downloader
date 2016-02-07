@@ -27,12 +27,14 @@ class App {
             return Promise.all(units.map(unit => unit.downloadPDF()));
         })
             .then(paths => {
-            console.log('Joining ' + paths.length + ' documents in one');
+            let outPath = path.join(this.outDirectory, this.startUnit + '-' + this.endUnit + '.pdf');
+            console.log('Joining ' + paths.length + ' documents in one:' + outPath);
             this.pdf = new pdf_1.default(paths);
-            return this.pdf.join(path.join(this.outDirectory, this.startUnit + '-' + this.endUnit + '.pdf'));
+            return this.pdf.join(outPath);
         })
             .then(out => {
             console.log('Done. Path:', out);
+            return out;
         });
     }
 }
