@@ -112,7 +112,8 @@ declare module 'efront-downloader/app/modules/app' {
 	    private auth;
 	    private units;
 	    private pdf;
-	    constructor(baseUrl: string, username: string, password: string, course: number, startUnit: number, endUnit: number, outDirectory: string);
+	    private fileName;
+	    constructor(baseUrl: string, username: string, password: string, course: number, startUnit: number, endUnit: number, outDirectory: string, fileName?: string);
 	    run(): Promise<string>;
 	}
 
