@@ -12,15 +12,22 @@ export default class App {
   private auth: Auth;
   private units: Unit[];
   private pdf : PDF;
+  private fileName: string;
   constructor(private baseUrl: string,
     private username: string,
     private password: string,
     private course: number,
     private startUnit: number,
     private endUnit: number,
-    private outDirectory : string
+    private outDirectory : string,
+    fileName?: string
   ){
       this.authFetcher = new AuthFetcher(baseUrl, username, password);
+      if (fileName) {
+        this.fileName = fileName;
+      } else {
+        this.fileName = this.startUnit + '-' + this.endUnit;
+      }
   }
 
   run() {
@@ -40,7 +47,7 @@ export default class App {
       );
     })
     .then(paths => {
-      let outPath = path.join(this.outDirectory, this.startUnit + '-' + this.endUnit + '.pdf');
+      let outPath = path.join(this.outDirectory, this.fileName + '.pdf');
       console.log('Joining ' + paths.length + ' documents in one:'+ outPath);
       this.pdf = new PDF(paths);
       return this.pdf.join(outPath);
